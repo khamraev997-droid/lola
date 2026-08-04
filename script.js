@@ -16,16 +16,26 @@ startButton.addEventListener("click", () => {
     });
 
     createHearts();
+setTimeout(() => {
+    letter.classList.remove("hidden");
 
+    letter.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    // через 15 секунд после письма запускаем финал
     setTimeout(() => {
-        letter.classList.remove("hidden");
+        const dream = document.getElementById("dreamFinal");
 
-        letter.scrollIntoView({
+        dream.classList.remove("hidden");
+
+        dream.scrollIntoView({
             behavior: "smooth"
         });
 
-    }, 12000);
+    }, 15000);
 
+}, 12000);
 });
 
 function createHearts(){
